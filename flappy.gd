@@ -66,4 +66,5 @@ func _physics_process(delta):
 		enable_jump = false
 
 	if(position.y > 800):
+		enable_jump = false
 		enable_motion = false

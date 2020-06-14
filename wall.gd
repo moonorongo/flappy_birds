@@ -2,16 +2,23 @@ extends StaticBody2D
 
 var velocity = Vector2.ZERO
 var original_position
+export (int) var speed = -3
+
+var rng = RandomNumberGenerator.new()
 
 
 func _ready():
-	original_position = position
+	rng.randomize()
+	
+	original_position = Vector2(910, rng.randi_range(150, 500))
+	position = original_position
 	set_process(true)
 
 func _process(delta):
-	position += Vector2(-3, 0)
+	position += Vector2(speed, 0)
 	
 	if(get_position().x < -90):
-		position = original_position
+		queue_free()
+		#position = original_position
 
 
