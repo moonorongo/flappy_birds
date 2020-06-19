@@ -17,6 +17,8 @@ _global_script_class_icons={
 
 config/name="Flappy Remotes"
 run/main_scene="res://game.tscn"
+config/use_custom_user_dir=true
+config/custom_user_dir_name="d:/fr_images"
 config/icon="res://icon.png"
 
 [display]
@@ -24,7 +26,6 @@ config/icon="res://icon.png"
 window/size/width=1366
 window/size/height=768
 window/size/resizable=false
-window/size/fullscreen=true
 window/stretch/mode="2d"
 
 [rendering]
