@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
-export (int) var jump_speed = -600
-export (int) var gravity = 1800
+export (int) var jump_speed = 600
+export (int) var gravity = -1800
 
 var velocity = Vector2.ZERO
 var angle = 0
@@ -9,10 +9,12 @@ var enable_jump = true
 var enable_motion = true
 var collision
 var original_position
-
+var timer
 
 func _ready():
 	original_position = position
+	timer = get_parent().get_node("Timer")
+	timer.stop()
 
 	
 func reset_game():
@@ -21,13 +23,14 @@ func reset_game():
 	position = original_position
 	enable_jump = true
 	enable_motion = true
-	jump_speed = -600
-	gravity = 1800
+	jump_speed = 600
+	gravity = -1800
+	timer.start()
 	
 		
 
 func _physics_process(delta):
-	angle = (velocity.y / 10)
+	angle = -(velocity.x / 10)
 #
 	if angle > 45:
 		angle = 45
@@ -37,13 +40,13 @@ func _physics_process(delta):
 	rotation = deg2rad(angle)
 	
 	if(enable_motion):
-		velocity.y += gravity * delta
+		velocity.x += gravity * delta
 		velocity = move_and_slide(velocity) 
 		if(get_slide_count() > 0): ## > 0 = has collide
 			enable_jump = false
 		
 # move_and_collide example		
-#		velocity.y += gravity * delta
+#		velocity.x += gravity * delta
 #		collision = move_and_collide(velocity * delta) 
 #		if(collision):
 #			enable_jump = false
@@ -56,15 +59,16 @@ func _physics_process(delta):
 
 	if enable_jump:
 		if Input.is_action_just_pressed("ui_accept"):
-			velocity.y = jump_speed
+			velocity.x = jump_speed
 	else:
 		if(not enable_motion):
 			if Input.is_action_just_pressed("ui_accept"):
 				reset_game()
 		
-	if(position.y < 0):
-		enable_jump = false
-
-	if(position.y > 800):
+	if(position.x < 0):
 		enable_jump = false
 		enable_motion = false
+		timer.stop()
+
+	if(position.x > 1400 or position.x < 344):
+		enable_jump = false
