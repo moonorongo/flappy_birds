@@ -10,14 +10,17 @@ var enable_motion = true
 var collision
 var original_position
 var timer
+var game
 
 func _ready():
+	game = get_tree().get_root().get_node("Game")
 	original_position = position
 	timer = get_parent().get_node("Timer")
-	timer.stop()
+	#timer.stop()
 
 	
 func reset_game():
+	game.reset_score()
 	velocity = Vector2.ZERO
 	angle = 0
 	position = original_position
@@ -38,10 +41,10 @@ func _physics_process(delta):
 		angle = -45
 
 	rotation = deg2rad(angle)
+	velocity.x += gravity * delta
 	
 	if(enable_motion):
-		velocity.x += gravity * delta
-		velocity = move_and_slide(velocity) 
+		move_and_slide(velocity) 
 		if(get_slide_count() > 0): ## > 0 = has collide
 			enable_jump = false
 		

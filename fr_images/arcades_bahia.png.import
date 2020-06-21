@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/banner5.png-589f471b1f6f2ecb490dfc5382d997b8.stex"
+path="res://.import/arcades_bahia.png-439ff500c1884099c553b819a5428531.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://fr_images/banner5.png"
-dest_files=[ "res://.import/banner5.png-589f471b1f6f2ecb490dfc5382d997b8.stex" ]
+source_file="res://fr_images/arcades_bahia.png"
+dest_files=[ "res://.import/arcades_bahia.png-439ff500c1884099c553b819a5428531.stex" ]
 
 [params]
 

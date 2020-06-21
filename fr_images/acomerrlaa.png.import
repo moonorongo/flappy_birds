@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/banner4.jpg-74fa44f68aaeb4054d92cfdfd45cec49.stex"
+path="res://.import/acomerrlaa.png-0e5af728840fa8f7e05079e055e5d5d9.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://fr_images/banner4.jpg"
-dest_files=[ "res://.import/banner4.jpg-74fa44f68aaeb4054d92cfdfd45cec49.stex" ]
+source_file="res://fr_images/acomerrlaa.png"
+dest_files=[ "res://.import/acomerrlaa.png-0e5af728840fa8f7e05079e055e5d5d9.stex" ]
 
 [params]
 

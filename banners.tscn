@@ -10,5 +10,5 @@ z_index = 4
 centered = false
 
 [node name="banner_timer" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 8.0
 [connection signal="timeout" from="banner_timer" to="." method="_on_banner_timer_timeout"]

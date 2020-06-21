@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/banner6.png-a9d8c40cbf23f742a70ea327bcfc77d9.stex"
+path="res://.import/remotos_bahia.jpg-efdf0ba102e49a6bafbda38f247bbb0c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://fr_images/banner6.png"
-dest_files=[ "res://.import/banner6.png-a9d8c40cbf23f742a70ea327bcfc77d9.stex" ]
+source_file="res://fr_images/remotos_bahia.jpg"
+dest_files=[ "res://.import/remotos_bahia.jpg-efdf0ba102e49a6bafbda38f247bbb0c.stex" ]
 
 [params]
 
