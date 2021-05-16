@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Videos.gd" type="Script" id=2]
+
+[node name="Videos" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="videoPlayer" type="VideoPlayer" parent="."]
+margin_right = 1366.0
+margin_bottom = 768.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="instructive_timer" type="Timer" parent="."]
+wait_time = 8.0
+autostart = true
+[connection signal="finished" from="videoPlayer" to="." method="_on_videoPlayer_finished"]

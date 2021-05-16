@@ -1,0 +1,60 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/game_over_bg.png" type="Texture" id=1]
+[ext_resource path="res://game_over.gd" type="Script" id=2]
+[ext_resource path="res://assets/fonts/5x5.tres" type="DynamicFont" id=3]
+
+[node name="GameOver" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="go_sign" type="KinematicBody2D" parent="."]
+position = Vector2( 1540, 384 )
+
+[node name="Sprite" type="Sprite" parent="go_sign"]
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="score" type="Label" parent="go_sign"]
+margin_left = -74.0
+margin_top = -284.0
+margin_right = 498.0
+margin_bottom = -189.0
+rect_rotation = 90.0
+custom_fonts/font = ExtResource( 3 )
+text = "0
+"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="go_sign_tween" type="Tween" parent="go_sign"]
+
+[node name="score_label" type="Label" parent="go_sign"]
+margin_left = -6.29639
+margin_top = -102.371
+margin_right = 268.704
+margin_bottom = -56.3711
+rect_rotation = 90.0
+rect_scale = Vector2( 0.75, 0.75 )
+custom_fonts/font = ExtResource( 3 )
+text = "Score"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="game_over_label" type="Label" parent="go_sign"]
+margin_left = 111.0
+margin_top = -285.0
+margin_right = 683.0
+margin_bottom = -239.0
+rect_rotation = 90.0
+custom_fonts/font = ExtResource( 3 )
+text = "Game Over"
+align = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}

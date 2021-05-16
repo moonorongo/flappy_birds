@@ -3,6 +3,8 @@ extends KinematicBody2D
 export (int) var jump_speed = 600
 export (int) var gravity = -1800
 
+var game_over_sign 
+
 var velocity = Vector2.ZERO
 var angle = 0
 var enable_jump = true
@@ -13,6 +15,7 @@ var timer
 var game
 
 func _ready():
+	game_over_sign = get_tree().get_root().get_node("Game/GameOver")
 	game = get_tree().get_root().get_node("Game")
 	original_position = position
 	timer = get_parent().get_node("Timer")
@@ -48,17 +51,6 @@ func _physics_process(delta):
 		if(get_slide_count() > 0): ## > 0 = has collide
 			enable_jump = false
 		
-# move_and_collide example		
-#		velocity.x += gravity * delta
-#		collision = move_and_collide(velocity * delta) 
-#		if(collision):
-#			enable_jump = false
-
-# move_and_slide collision example
-#	for i in get_slide_count():
-#	    var collision = get_slide_collision(i)
-#	    print("I collided with ", collision.collider.name)
-
 
 	if enable_jump:
 		if Input.is_action_just_pressed("ui_accept"):
@@ -67,11 +59,14 @@ func _physics_process(delta):
 		if(not enable_motion):
 			if Input.is_action_just_pressed("ui_accept"):
 				reset_game()
+				game_over_sign.ocultar()
 		
-	if(position.x < 0):
+	if(position.x < 0 and enable_motion):
+		#print("muertoooo")
 		enable_jump = false
 		enable_motion = false
 		timer.stop()
+		game_over_sign.mostrar(game.score)
 
 	if(position.x > 1400 or position.x < 344):
 		enable_jump = false
