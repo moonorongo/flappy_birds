@@ -5,7 +5,7 @@ var video_stream
 var files_arr
 var files_idx = 0
 
-onready var instructive_timer = get_node("instructive_timer")
+onready var startscreen_timer = get_node("startscreen_timer")
 
 
 # Called when the node enters the scene tree for the first time.
@@ -15,8 +15,20 @@ func _ready():
 	files_arr = list_files_in_directory('fr_videos/')
 	play_next_video()
 	
-
-
+	
+func hide_videos():
+	video_player.stop()
+	video_player.hide()
+	#startscreen.hide_startscreen()
+	
+func show_videos():
+	video_player.show()
+	video_player.play()
+	#startscreen.show_startscreen()
+		
+		
+# TODO: armar startscreen, con la animacion de la manito
+# y el control que salta cuando apreta el control		
 
 func play_next_video():
 	if(files_idx >=  files_arr.size()):
