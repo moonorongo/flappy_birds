@@ -1,0 +1,14 @@
+[gd_scene format=2]
+
+[node name="start_screen" type="Node2D"]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = 785.575
+margin_top = 262.263
+margin_right = 1059.57
+margin_bottom = 352.263
+rect_rotation = 89.9999
+text = "Press any button in Remote Control"
+__meta__ = {
+"_edit_use_anchors_": false
+}

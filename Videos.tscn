@@ -1,5 +1,6 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
+[ext_resource path="res://start_screen.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Videos.gd" type="Script" id=2]
 
 [node name="Videos" type="Node2D"]
@@ -14,5 +15,8 @@ __meta__ = {
 
 [node name="startscreen_timer" type="Timer" parent="."]
 wait_time = 8.0
-autostart = true
+one_shot = true
+
+[node name="start_screen" parent="." instance=ExtResource( 1 )]
 [connection signal="finished" from="videoPlayer" to="." method="_on_videoPlayer_finished"]
+[connection signal="timeout" from="startscreen_timer" to="." method="_on_startscreen_timer_timeout"]
