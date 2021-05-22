@@ -10,9 +10,16 @@ var enable_motion = true
 var original_position
 var jump_timer 
 
+var manito_remoto
+
+signal flappy_jump
+
 func _ready():
 	original_position = position
 	jump_timer = get_node("jump_timer")
+	manito_remoto = get_parent().get_node("ManitoRemoto")
+	# connect signal game_over_sign = get_tree().get_root().get_node("Game/GameOver")
+	self.connect("flappy_jump", manito_remoto, '_on_flappy_jump')
 
 	start_am()
 	#stop_am()
@@ -50,12 +57,13 @@ func _physics_process(delta):
 	if enable_jump:
 		velocity.x = jump_speed
 		enable_jump = false
+		emit_signal("flappy_jump")
 		
-	if(position.x < 500):
+	if(position.x < 700):
 		enable_jump = true
 		jump_timer.start()
 
-	if(position.x > original_position.x):
+	if(position.x > original_position.x + 100):
 		jump_timer.stop()
 
 
