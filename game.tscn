@@ -46,6 +46,7 @@ __meta__ = {
 }
 
 [node name="flappy" parent="." instance=ExtResource( 1 )]
+position = Vector2( 0, 370 )
 
 [node name="CanvasBG" type="CanvasLayer" parent="."]
 layer = -1

@@ -58,3 +58,8 @@ __meta__ = {
 "_edit_lock_": true,
 "_edit_use_anchors_": false
 }
+
+[node name="timer_gameover" type="Timer" parent="."]
+wait_time = 2.5
+one_shot = true
+[connection signal="timeout" from="timer_gameover" to="." method="_on_timer_gameover_timeout"]

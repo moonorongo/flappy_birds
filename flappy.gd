@@ -17,7 +17,7 @@ var game
 func _ready():
 	game_over_sign = get_tree().get_root().get_node("Game/GameOver")
 	game = get_tree().get_root().get_node("Game")
-	original_position = position
+	original_position = Vector2(900, 370)
 	timer = get_parent().get_node("Timer")
 	#timer.stop()
 
@@ -57,9 +57,9 @@ func _physics_process(delta):
 			velocity.x = jump_speed
 	else:
 		if(not enable_motion):
-			if Input.is_action_just_pressed("ui_accept"):
+			if Input.is_action_just_pressed("ui_accept") and not game_over_sign.on_screen:
 				reset_game()
-				game_over_sign.ocultar()
+				#game_over_sign.ocultar()
 		
 	if(position.x < 0 and enable_motion):
 		#print("muertoooo")
