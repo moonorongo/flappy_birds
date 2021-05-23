@@ -17,5 +17,6 @@ __meta__ = {
 }
 
 [node name="flappy" parent="." instance=ExtResource( 1 )]
+position = Vector2( 900, 170 )
 
 [node name="ManitoRemoto" parent="." instance=ExtResource( 2 )]

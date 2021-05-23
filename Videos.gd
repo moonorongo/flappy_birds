@@ -35,6 +35,7 @@ func play_next_video():
 	
 	video_player.show()
 	startscreen.hide()
+	startscreen.get_node("flappy").stop_am()
 
 	video_stream.set_file(files_arr[files_idx])
 	video_player.stream = video_stream
@@ -45,6 +46,7 @@ func play_next_video():
 func show_startscreen():
 	video_player.hide()
 	startscreen.show()
+	startscreen.get_node("flappy").start_am()
 	startscreen_timer.start()
 
 

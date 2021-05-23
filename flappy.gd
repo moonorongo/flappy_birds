@@ -13,9 +13,11 @@ var collision
 var original_position
 var timer
 var game
+var videos
 
 func _ready():
 	game_over_sign = get_tree().get_root().get_node("Game/GameOver")
+	videos = get_tree().get_root().get_node("Game/CanvasFloor/Videos")
 	game = get_tree().get_root().get_node("Game")
 	original_position = Vector2(900, 370)
 	timer = get_parent().get_node("Timer")
@@ -23,6 +25,7 @@ func _ready():
 
 	
 func reset_game():
+	videos.hide_videos()
 	game.reset_score()
 	velocity = Vector2.ZERO
 	angle = 0

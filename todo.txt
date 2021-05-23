@@ -1,9 +1,15 @@
-que cuando pulses una tecla en el remoto saque el attract mode
-y pare la animacion del remoto
+* que cuando pulses una tecla en el remoto saque el attract mode
+* y pare la animacion del remoto
 
-integrar videos
+* integrar videos
 
 hardcodear publicidad mia, 
 que la ponga cada 3 publicidades de franco
 
 agregar texto "Programacion: Mauro Cifuentes - Arcades Bahia"
+
+agregar text en AM
+   Pulse cualquier tecla en el remoto para comenzar jugar
+
+ver como exportar esta poronga
+

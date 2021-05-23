@@ -15,13 +15,13 @@ var manito_remoto
 signal flappy_jump
 
 func _ready():
-	original_position = position
+	original_position = Vector2(900, 170)
 	jump_timer = get_node("jump_timer")
 	manito_remoto = get_parent().get_node("ManitoRemoto")
 	# connect signal game_over_sign = get_tree().get_root().get_node("Game/GameOver")
 	self.connect("flappy_jump", manito_remoto, '_on_flappy_jump')
 
-	start_am()
+	#start_am()
 	#stop_am()
 
 	
@@ -34,9 +34,11 @@ func start_am():
 	jump_speed = 600
 	gravity = -1800
 	jump_timer.start()
+	show()
 
 
 func stop_am():
+	hide()
 	jump_timer.stop()
 	enable_motion = false	
 		
