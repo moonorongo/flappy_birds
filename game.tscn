@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://flappy.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Videos.tscn" type="PackedScene" id=2]
@@ -10,6 +10,13 @@
 [ext_resource path="res://banners.tscn" type="PackedScene" id=8]
 [ext_resource path="res://game_over.tscn" type="PackedScene" id=9]
 [ext_resource path="res://assets/fonts/5x5.tres" type="DynamicFont" id=10]
+[ext_resource path="res://assets/fonts/Roboto-Medium.ttf" type="DynamicFontData" id=11]
+
+[sub_resource type="DynamicFont" id=1]
+outline_size = 2
+outline_color = Color( 0, 0.301961, 0.0431373, 0.847059 )
+use_filter = true
+font_data = ExtResource( 11 )
 
 [node name="Game" type="Node2D"]
 script = ExtResource( 3 )
@@ -46,6 +53,18 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="programado_por" type="Label" parent="hid"]
+margin_left = 369.59
+margin_top = 16.6585
+margin_right = 915.59
+margin_bottom = 48.6585
+rect_rotation = 89.9999
+custom_fonts/font = SubResource( 1 )
+text = "Programado por Mauro Cifuentes - Arcades Bahia"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="flappy" parent="." instance=ExtResource( 1 )]
 position = Vector2( 0, 370 )
 
@@ -69,7 +88,6 @@ texture = ExtResource( 4 )
 z_index = 5
 
 [node name="banners" parent="CanvasFloor" instance=ExtResource( 8 )]
-position = Vector2( -28, 0 )
 
 [node name="Floor" type="StaticBody2D" parent="CanvasFloor"]
 position = Vector2( 344, 0 )

@@ -3,13 +3,19 @@
 
 * integrar videos
 
-hardcodear publicidad mia, 
-que la ponga cada 3 publicidades de franco
+* hardcodear publicidad mia, 
+* que la ponga cada 3 publicidades de franco
+*    la hardcodee en el AM
 
-agregar texto "Programacion: Mauro Cifuentes - Arcades Bahia"
+* agregar texto "Programacion: Mauro Cifuentes - Arcades Bahia"
+
+
 
 agregar text en AM
-   Pulse cualquier tecla en el remoto para comenzar jugar
+   Pulsa cualquier tecla en el remoto para comenzar jugar
+   	se lo pase a franco
+
 
 ver como exportar esta poronga
+	quitar la opcion debug
 
