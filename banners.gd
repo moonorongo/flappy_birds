@@ -1,30 +1,47 @@
 extends StaticBody2D
 
-var banner_spr
-
 var files_arr
-
-var files_idx = 0
+var files_idx
+var banner_ab_counter
+onready var banner_spr = get_node("banners_spr")
 onready var banner_timer = get_node("banner_timer")
+onready var banner_ab = get_node("banner_ab")
 
 
 func _ready():
-	banner_spr = get_node("banners_spr")
+	reset()
+
+func reset():
+	files_idx = 0
+	banner_ab_counter = 1
+	banner_spr.hide()
+	banner_ab.show()
 	files_arr = list_files_in_directory('fr_images/')
-	update_banner()
 	banner_timer.start()
-	files_idx += 1
 
+func stop():
+	banner_ab.hide()
+	banner_spr.hide()
+	banner_timer.stop()
 
-
+func start():
+	reset()
 
 func _on_banner_timer_timeout():
-	
 	if(files_idx >=  files_arr.size()):
 		files_idx = 0
-		
-	update_banner()
-	files_idx += 1
+	
+	if(banner_ab_counter == 4):
+		banner_ab_counter = 0;
+		banner_ab.show()
+		banner_spr.hide()
+	else:	
+		update_banner()
+		files_idx += 1
+		banner_spr.show()
+		banner_ab.hide()
+	
+	banner_ab_counter += 1
 
 
 func update_banner():

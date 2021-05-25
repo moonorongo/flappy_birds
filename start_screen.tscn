@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://flappy_attractmode.tscn" type="PackedScene" id=1]
 [ext_resource path="res://ManitoRemoto.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/arcades_bahia_am.png" type="Texture" id=3]
+[ext_resource path="res://assets/pulsa_para_jugar.png" type="Texture" id=4]
 
 [node name="start_screen" type="Node2D"]
 
@@ -12,6 +13,10 @@ centered = false
 
 [node name="flappy" parent="." instance=ExtResource( 1 )]
 position = Vector2( 900, 170 )
+
+[node name="cartel_pulsa" type="Sprite" parent="."]
+position = Vector2( 1028.41, 524.526 )
+texture = ExtResource( 4 )
 
 [node name="ManitoRemoto" parent="." instance=ExtResource( 2 )]
 position = Vector2( 80, -4 )

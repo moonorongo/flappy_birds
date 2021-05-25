@@ -5,10 +5,12 @@ onready var go_tween = get_node("go_sign/go_sign_tween")
 onready var score_label = get_node("go_sign/score")
 onready var timer_gameover = get_node("timer_gameover")
 var videos
+var banners
 var on_screen  = false
 
 func _ready():
 	videos = get_tree().get_root().get_node("Game/CanvasFloor/Videos")
+	banners = get_tree().get_root().get_node("Game/CanvasFloor/banners")
 	
 
 func mostrar(score):
@@ -33,4 +35,4 @@ func ocultar():
 func _on_timer_gameover_timeout():
 	ocultar()
 	videos.show_videos()
-	# mostrar videos
+	banners.stop()

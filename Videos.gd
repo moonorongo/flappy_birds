@@ -15,7 +15,7 @@ func _ready():
 	files_arr = list_files_in_directory('fr_videos/')
 	hide_videos()
 	# testing
-	show_videos()
+	# show_videos()
 
 
 func hide_videos():

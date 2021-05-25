@@ -4,8 +4,8 @@
 [ext_resource path="res://flappy.gd" type="Script" id=2]
 
 [sub_resource type="CapsuleShape2D" id=1]
-radius = 24.965
-height = 62.6706
+radius = 17.9656
+height = 69.4492
 
 [node name="flappy" type="KinematicBody2D"]
 position = Vector2( 903.864, 369.651 )
@@ -16,6 +16,6 @@ position = Vector2( 0.185364, 0.12262 )
 texture = ExtResource( 1 )
 
 [node name="FlappyCollision" type="CollisionShape2D" parent="."]
-position = Vector2( -0.191032, 5.03029 )
+position = Vector2( -6.44739, 6.14751 )
 rotation = -0.207694
 shape = SubResource( 1 )
