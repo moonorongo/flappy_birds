@@ -6,7 +6,8 @@ var banner_ab_counter
 onready var banner_spr = get_node("banners_spr")
 onready var banner_timer = get_node("banner_timer")
 onready var banner_ab = get_node("banner_ab")
-
+var banner_image
+var banner_texture 
 
 func _ready():
 	reset()
@@ -14,6 +15,8 @@ func _ready():
 func reset():
 	files_idx = 0
 	banner_ab_counter = 1
+	banner_image = Image.new()
+	banner_texture = ImageTexture.new()
 	banner_spr.hide()
 	banner_ab.show()
 	files_arr = list_files_in_directory('fr_images/')
@@ -45,7 +48,9 @@ func _on_banner_timer_timeout():
 
 
 func update_banner():
-	banner_spr.set_texture(load(files_arr[files_idx]));
+	banner_image.load(files_arr[files_idx])
+	banner_texture.create_from_image(banner_image, 0)
+	banner_spr.set_texture(banner_texture);
 
 
 func list_files_in_directory(path):

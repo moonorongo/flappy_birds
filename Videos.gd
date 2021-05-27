@@ -12,7 +12,7 @@ onready var startscreen = get_node("start_screen")
 func _ready():
 	video_stream = VideoStreamWebm.new()
 	video_player = get_node("videoPlayer")
-	files_arr = list_files_in_directory('fr_videos/')
+	files_arr = list_files_in_directory('./fr_videos/')
 	hide_videos()
 	# testing
 	# show_videos()
